@@ -1,28 +1,33 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import { Button } from "@/components/ui/button"
-import './App.css'
-import Topbar from './components/dashboard/TopBar'
-import Dashboard from './components/dashboard/Dashboard'
+import { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-
+import Topbar from "./components/dashboard/TopBar";
+import Dashboard from "./components/dashboard/Dashboard";
+import OrdersTable from "./components/dashboard/OrdersTable";
+import Sidebar from "./components/dashboard/Sidebar";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <Router>
-        <Topbar />
-        <Routes>
-          <Route path="/" element={<Dashboard />} />
-          <Route path="/sales" />
-          <Route path="/chat" />
-        </Routes>
-      </Router>
-    </>
-  )
+    <Router>
+      <div className="flex min-h-screen">
+        {/* Sidebar */}
+        <div className="w-16 bg-dark-green fixed h-full">
+          <Sidebar />
+        </div>
+
+        {/* Main Content */}
+        <div className="flex-1 ml-16">
+          <Topbar />
+          <div className="p-6">
+            <Routes>
+              <Route path="/" element={<Dashboard />} />
+              <Route path="/sales" element={<OrdersTable />} />
+              <Route path="/chat" />
+            </Routes>
+          </div>
+        </div>
+      </div>
+    </Router>
+  );
 }
 
-export default App
+export default App;

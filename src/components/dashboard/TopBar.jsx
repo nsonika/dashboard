@@ -14,7 +14,7 @@ export default function Topbar() {
     ];
 
     return (
-        <div className="flex items-center justify-between mb-8 border-b-[1px] py-4 px-6 bg-white">
+        <div className="flex items-center justify-between mb-1 border-b-[1px] py-4 px-6 bg-white">
             <div className="flex items-center gap-3">
                 {menuItems.map((item, index) => (
                     <button

@@ -25,6 +25,14 @@ const cards = [
         icon: <MdLocalOffer className="text-gray-700" />,
     },
     {
+        title: "Conversion",
+        value: "50%",
+        trend: "15% decrease",
+        trendIcon: <IoTrendingDownOutline className="text-red-500" />,
+        trendColor: "text-red-500",
+        icon: <FaCheck className=" text-gray-700" />,
+    },
+    {
         title: "Total Sales Value",
         value: "$2,400",
         trend: "15% increase",
@@ -41,14 +49,6 @@ const cards = [
         icon: <HiOutlineCircleStack className=" text-gray-700" />,
     },
     {
-        title: "Conversion",
-        value: "50%",
-        trend: "15% decrease",
-        trendIcon: <IoTrendingDownOutline className="text-red-500" />,
-        trendColor: "text-red-500",
-        icon: <FaCheck className=" text-gray-700" />,
-    },
-    {
         title: "Commission Paid",
         value: "$240",
         trend: "15% increase",
@@ -61,14 +61,14 @@ const cards = [
 
 export default function DashboardCards() {
     return (
-        <div className="max-w-7xl mx-auto bg-gray-50 p-8 rounded-lg">
+        <div className="max-w-7xl mx-auto bg-white  rounded-lg">
             <div className="flex justify-between items-center mb-6">
                 <h2 className="text-2xl font-semibold text-gray-800">At a Glance</h2>
-                <div className="bg-gray-200 flex items-center space-x-2 px-4 py-2 rounded-xl cursor-pointer">
+                <div className="bg-white flex items-center space-x-2 px-4 py-2 rounded-xl cursor-pointer">
                     {/* Shadcn Select */}
                     <Select>
-                        <SelectTrigger className="bg-gray-200 flex items-center px-4 py-2 rounded-xl border text-gray-700">
-                            <SelectValue placeholder="14 days" />
+                        <SelectTrigger className="flex items-center px-4 py-2 rounded-xl border text-gray-700">
+                            <SelectValue placeholder="7 days" />
                         </SelectTrigger>
                         <SelectContent>
                             <SelectItem value="7 days">7 days</SelectItem>
@@ -83,7 +83,7 @@ export default function DashboardCards() {
                 {cards.map((card, index) => (
                     <div
                         key={index}
-                        className="bg-white shadow-lg border border-gray-200 rounded-lg p-6 flex flex-col items-start transition-transform hover:scale-105"
+                        className="bg-white border-gray-200 p-6 flex flex-col items-start transition-transform hover:scale-105 border rounded-2xl px-6 py-7 text-sm"
                     >
                         <div className="flex items-center gap-2 mb-4">
                             <div>{card.icon}</div>
