@@ -54,8 +54,8 @@ export default function OrdersTable() {
     const [chatOpen, setChatOpen] = useState(false);
     const [selectedOrder, setSelectedOrder] = useState(null);
     return (
-        <div className="p-8  rounded-lg shadow-sm">
-            <h2 className="text-2xl font-semibold mb-4">Orders</h2>
+        <div className="p-6  rounded-lg shadow-sm">
+            <h2 className="text-2xl font-semibold mb-4 py-6">Orders</h2>
             <div className="overflow-hidden border border-gray-300 rounded-lg">
                 <Table className="w-full">
                     <TableHeader>

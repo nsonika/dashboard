@@ -16,7 +16,12 @@ import {
     CardContent,
     CardHeader,
     CardTitle,
+    CardDescription,
+    CardFooter
 } from "@/components/ui/card";
+
+import { BsBarChartLineFill, } from "react-icons/bs";
+import { PiChatTeardropFill } from "react-icons/pi";
 
 // Line chart data
 const lineChartData = [
@@ -51,8 +56,11 @@ export function LineChartComponent() {
     return (
         <Card className="rounded-2xl bg-transparent border-none">
             <CardHeader>
-                {/* <CardTitle>Weekly Performance</CardTitle> */}
+                <CardDescription className="uppercase font-medium tracking-wide flex items-center gap-2">
+                    <PiChatTeardropFill /> Consultations
+                </CardDescription>
             </CardHeader>
+
             <CardContent>
                 <ResponsiveContainer width="100%" height={300}>
                     <LineChart
@@ -81,6 +89,21 @@ export function LineChartComponent() {
                     </LineChart>
                 </ResponsiveContainer>
             </CardContent>
+            <CardFooter className="border-t-2 mx-6 pt-6 text-font-gray text-sm flex gap-8 px-10  ">
+                <div className="flex items-center gap-2">
+                    <div className="h-1 w-5 bg-[#A3A3A3] rounded-full"></div>
+                    Incoming
+                </div>
+                <div className="flex items-center gap-2">
+                    <div className="h-1 w-5 bg-[#14B8A6] rounded-full"></div>
+                    Answered
+                </div>
+                <div className="flex items-center gap-2">
+                    <div className="h-1 w-5 bg-[#FFE587] rounded-full"></div>
+                    Experts Online
+                </div>
+            </CardFooter>
+
         </Card>
     );
 }
@@ -111,28 +134,30 @@ export function BarChartComponent() {
 // Insights Component
 export default function Insights() {
     return (
-        <div className="p-6 space-y-8 rounded-lg max-w-7xl mx-auto">
-            <h1 className="text-2xl font-semibold text-gray-800">Insights</h1>
+        <div className="p-6 rounded-lg ">
+            <h1 className="text-font-black font-medium text-2xl py-4">Insights</h1>
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 mt-6">
 
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
-
-                <div className="col-span-1 lg:col-span-7 relative border rounded-2xl text-sm ">
-                    {/* Nested Charts */}
-                    <div className="absolute top-20 left-0 w-full h-full ">
-
-                        <BarChartComponent />
-                    </div>
-                    <div className="relative z-10 bottom-12" >
-
+                <div className="col-span-1 lg:col-span-7 relative border rounded-2xl text-sm">
+                    {/* Line Chart */}
+                    <div className="relative z-10">
                         <LineChartComponent />
                     </div>
+                    {/* Bar Chart */}
+                    <div className="absolute top-[122px] left-0 w-full h-full">
+                        <BarChartComponent />
+                    </div>
+
                 </div>
 
                 {/* Comparison Bar Chart */}
                 <Card className="col-span-1 lg:col-span-3 border rounded-2xl  text-sm ">
                     <CardHeader>
-                        {/* <CardTitle>Comparison</CardTitle> */}
+                        <CardDescription className="uppercase font-medium tracking-wide flex items-center gap-2">
+                            <BsBarChartLineFill /> vs past period
+                        </CardDescription>
                     </CardHeader>
+
                     <CardContent className="h-[300px]">
                         <ResponsiveContainer width="100%" height="100%">
                             <BarChart data={comparisonData}>
@@ -145,6 +170,16 @@ export default function Insights() {
                             </BarChart>
                         </ResponsiveContainer>
                     </CardContent>
+                    <CardFooter className="border-t mt-4 pt-3 text-gray-600 px-1 text-sm flex gap-8 flex-1 flex-wrap justify-center">
+                        <div className="flex items-center gap-2 flex-shrink-0 truncate">
+                            <div className="h-1 w-5 bg-[#A7F3D0] rounded-full"></div>
+                            Consultations
+                        </div>
+                        <div className="flex items-center gap-2 flex-shrink-0">
+                            <div className="h-1 w-5 bg-[#065F46] rounded-full"></div>
+                            Orders Closed
+                        </div>
+                    </CardFooter>
                 </Card>
 
                 {/* Forecasts Card */}

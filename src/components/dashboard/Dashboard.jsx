@@ -11,7 +11,7 @@ export default function Dashboard() {
             {/* <Sidebar /> */}
 
             {/* Main Content */}
-            <div className="flex-1 border rounded-2xl px-6 py-7 text-sm">
+            <div className="flex-1 border rounded-2xl py-7 text-sm">
                 <DashboardCards />
                 <Insights />
                 <OrdersTable />

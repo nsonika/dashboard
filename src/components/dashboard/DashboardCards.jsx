@@ -61,9 +61,9 @@ const cards = [
 
 export default function DashboardCards() {
     return (
-        <div className="max-w-7xl mx-auto bg-white  rounded-lg">
-            <div className="flex justify-between items-center mb-6">
-                <h2 className="text-2xl font-semibold text-gray-800">At a Glance</h2>
+        <div className=" bg-white  rounded-lg ">
+            <div className="flex justify-between items-center mb-4">
+                <h2 className="text-2xl font-semibold text-gray-800 px-6">At a Glance</h2>
                 <div className="bg-white flex items-center space-x-2 px-4 py-2 rounded-xl cursor-pointer">
                     {/* Shadcn Select */}
                     <Select>
@@ -79,7 +79,7 @@ export default function DashboardCards() {
                     </Select>
                 </div>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-6">
                 {cards.map((card, index) => (
                     <div
                         key={index}
@@ -89,7 +89,7 @@ export default function DashboardCards() {
                             <div>{card.icon}</div>
                             <h3 className="text-lg font-medium text-gray-600">{card.title}</h3>
                         </div>
-                        <p className="text-2xl font-bold text-gray-900">{card.value}</p>
+                        <p className=" text-gray-900 text-3xl font-medium">{card.value}</p>
                         <p className={`text-sm ${card.trendColor} flex items-center mt-2`}>
                             {card.trendIcon}
                             {card.trend}
