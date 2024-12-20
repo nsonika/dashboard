@@ -1,8 +1,39 @@
-# React + Vite
+# Dashboard Interface
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview
+This project is a modern and responsive dashboard interface designed to display analytics, data insights, and interactive components. The dashboard features a sidebar, top bar navigation, and various interactive cards and charts. It is built with React.js, Tailwind CSS, and Shadcn for enhanced visuals and functionality.
 
-Currently, two official plugins are available:
+## Technologies Used
+- **React.js**: For building the user interface.
+- **Tailwind CSS**: For styling the application.
+- **Shadcn**: For implementing clean and reusable UI components like cards, and tables.
+- **React Icons**: For adding clean and visually appealing icons.
+- **Recharts**: For interactive charts and graphs.
+- **React Router**: For navigation within the dashboard.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
+## Installation
+
+### Clone the Repository
+```bash
+git clone https://github.com/nsonika/dashboard.git
+cd dashboard
+```
+
+### Install Dependencies
+```bash
+npm install
+```
+
+### Start the Development Server
+```bash
+npm run dev
+```
+
+## File Structure
+- **src/components/dashboard**: Contains all dashboard-related components like Sidebar, TopBar, DashboardCards, OrdersTable, and Insights.
+- **src/assets**: Stores images, logos, and other static assets.
+- **src/App.js**: Main entry point for the application with routing setup.
+
+## Demo
+**Live Demo**: [View Dashboard](https://dashboard-black-five-96.vercel.app/)
